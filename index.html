@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untuk Kamu | Our Story</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Popup foto -->
+    <div id="popup" onclick="tutupFoto(event)">
+        <img id="gambarPopup">
+    </div>
+
+    <!-- Navigasi -->
+    <nav>
+        <h2>Our Story</h2>
+
+        <ul>
+            <li><a href="#timeline">Timeline</a></li>
+            <li><a href="#gallery">Galeri</a></li>
+            <li><a href="#memory-box">Kotak Kenangan</a></li>
+            <li><a href="#letter">Pesan</a></li>
+        </ul>
+    </nav>
+
+    <!-- Halaman pembuka -->
+    <section class="hero">
+
+        <img src="images/icon/heart.png" class="heart heart1" alt="">
+        <img src="images/icon/heart.png" class="heart heart2" alt="">
+        <img src="images/icon/heart.png" class="heart heart3" alt="">
+
+        <div class="bubble bubble1"></div>
+        <div class="bubble bubble2"></div>
+        <div class="bubble bubble3"></div>
+
+        <h1>Untuk Kamu</h1>
+
+        <p class="hero-sub">
+            Website ini aku bikin khusus buat orang yang paling spesial.
+        </p>
+
+        <img src="images/timeline/foto1.jpg" class="hero-photo" alt="Foto kita">
+
+        <p class="hero-quote">
+            "Makasih udah hadir dan bikin hari-hari aku lebih berwarna."
+        </p>
+
+        <button class="btn-primary" onclick="scrollToTimeline()">
+            Mulai Perjalanan Kita
+        </button>
+
+    </section>
+
+    <!-- Timeline -->
+    <section class="timeline" id="timeline">
+
+        <h2 class="section-title">Perjalanan Kita</h2>
+
+        <div class="card hidden">
+            <img src="images/timeline/foto.jpg" alt="Foto bareng pertama">
+            <div class="content">
+                <span class="date">6 November 2025</span>
+                <h3>Duarr inget gaa kamuu</h3>
+                <p>
+                    Di sinilah awal dariii semuaa semua nya. diajak main roblok lagii. mulai lagii dari awall ni pas inii ahhahaha
+                </p>
+            </div>
+        </div>
+
+        <div class="card hidden">
+            <img src="images/timeline/foto2.jpg" alt="Foto pertama">
+            <div class="content">
+                <span class="date">12 November 2025</span>
+                <h3>Fotbar pertamaa</h3>
+                <p>
+                    Fotbar resmi pertamaa walaupun sebelumnya udah di tribun AHAHAHA. lucuu betul nii tangan akuu kamu tarik inget banget akuu love you
+                </p>
+            </div>
+        </div>
+
+        <div class="card hidden">
+            <img src="images/timeline/foto1.jpg" alt="Foto bareng kedua">
+            <div class="content">
+                <span class="date">30 November 2025</span>
+                <h3>Pertamaa kalii seperti inii</h3>
+                <p>
+                    Dengan strategii "kerja kelompok" laluu bisa beginii mwehehe. seneng betull sayangg kalo diinget inget kangen masa itu
+                </p>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Galeri -->
+    <section class="gallery" id="gallery">
+
+        <h2 class="section-title"><img src="images/icon/camera.png" class="section-icon" alt=""> Kenangan Kita</h2>
+
+        <div class="photos">
+
+            <figure class="photo-item">
+                <img src="images/timeline/foto1.jpg" onclick="lihatFoto(this)" alt="Kenangan 1">
+                <figcaption>Momen pertama kita</figcaption>
+            </figure>
+
+            <figure class="photo-item">
+                <img src="images/timeline/foto2.jpg" onclick="lihatFoto(this)" alt="Kenangan 2">
+                <figcaption>Fotbar pertama kita</figcaption>
+            </figure>
+
+            <figure class="photo-item">
+                <img src="images/timeline/foto.jpg" onclick="lihatFoto(this)" alt="Kenangan 3">
+                <figcaption>Bareng lagi, selalu</figcaption>
+            </figure>
+
+        </div>
+
+        <!-- Kotak video -->
+        <div class="video-box">
+            <video id="videoKita" src="images/video/lucuubetul48.mp4" preload="metadata" poster="images/video/lucuubetul48.mp4"></video>
+            <div class="video-play" onclick="playVideo()">
+                <span>▶</span>
+            </div>
+        </div>
+
+        <!-- Tombol galeri lengkap -->
+        <div class="gallery-actions">
+            <button class="btn-secondary" onclick="toggleGallery()">
+                Lihat Galeri Selengkapnya
+            </button>
+        </div>
+
+        <!-- Galeri lengkap (tambah foto di sini) -->
+        <div id="gallery-full" class="gallery-full">
+
+            <div class="photos">
+
+                <figure class="photo-item">
+                    <img src="images/timeline/foto1.jpg" onclick="lihatFoto(this)" alt="Foto tambahan 1">
+                    <figcaption>Foto tambahan 1</figcaption>
+                </figure>
+
+                <figure class="photo-item">
+                    <img src="images/timeline/foto2.jpg" onclick="lihatFoto(this)" alt="Foto tambahan 2">
+                    <figcaption>Foto tambahan 2</figcaption>
+                </figure>
+
+                <figure class="photo-item">
+                    <img src="images/timeline/foto.jpg" onclick="lihatFoto(this)" alt="Foto tambahan 3">
+                    <figcaption>Foto tambahan 3</figcaption>
+                </figure>
+
+                <figure class="photo-item">
+                    <img src="images/timeline/foto1.jpg" onclick="lihatFoto(this)" alt="Foto tambahan 4">
+                    <figcaption>Foto tambahan 4</figcaption>
+                </figure>
+
+                <figure class="photo-item">
+                    <img src="images/timeline/foto2.jpg" onclick="lihatFoto(this)" alt="Foto tambahan 5">
+                    <figcaption>Foto tambahan 5</figcaption>
+                </figure>
+
+                <figure class="photo-item">
+                    <img src="images/timeline/foto.jpg" onclick="lihatFoto(this)" alt="Foto tambahan 6">
+                    <figcaption>Foto tambahan 6</figcaption>
+                </figure>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Kotak Kenangan -->
+    <section class="memory-box" id="memory-box">
+
+        <h2 class="section-title">Kotak Kenangan</h2>
+
+        <div class="memory-grid">
+
+            <div class="memory-card" onclick="toggleBox('foto')">
+                <h3><img src="images/icon/camera.png" class="card-icon" alt=""> Foto Favorit</h3>
+            </div>
+
+            <div class="memory-card" onclick="toggleBox('chat')">
+                <h3><img src="images/icon/chat.png" class="card-icon" alt=""> Chat Terlucu</h3>
+            </div>
+
+            <div class="memory-card" onclick="toggleBox('lagu')">
+                <h3><img src="images/icon/music.png" class="card-icon" alt=""> Lagu Favorit</h3>
+            </div>
+
+            <div class="memory-card" onclick="toggleBox('surat')">
+                <h3><img src="images/icon/mail.png" class="card-icon" alt=""> Surat Rahasia</h3>
+            </div>
+
+        </div>
+
+        <div id="foto" class="memory-content">
+            <img src="images/timeline/foto2.jpg" class="memory-photo" alt="Foto favorit">
+            <p>
+                Foto ini selalu bikin aku inget momen waktu kita ...
+            </p>
+        </div>
+
+        <div id="chat" class="memory-content">
+            <div class="bubble left">
+                Lagi ngapain?
+            </div>
+
+            <div class="bubble right">
+                Lagi mikirin kamu wkwk
+            </div>
+        </div>
+
+        <div id="lagu" class="memory-content">
+
+            <div class="music-player">
+
+                <div class="cover-wrapper">
+
+                    <img src="images/timeline/foto2.jpg" class="cover" id="coverLagu" alt="Cover lagu">
+
+                </div>
+
+                <div class="music-info">
+
+                    <h3>Cokelat Biru - Giorgino</h3>
+
+                    <p>Lagu yang selalu ngingetin aku sama kamu.</p>
+
+                    <div class="progress-container">
+
+                        <span id="currentTime">0:00</span>
+
+                        <input type="range" id="progressBar" value="0" min="0" max="100">
+
+                        <span id="duration">0:00</span>
+
+                    </div>
+
+                    <button class="play-btn" onclick="putarLagu()">
+                        ▶
+                    </button>
+
+                    <audio id="laguKita" preload="metadata">
+
+                        <source src="audio/cobir.mp3" type="audio/mpeg">
+
+                    </audio>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="surat" class="memory-content">
+            <p>
+                Makasih udah hadir di hidup aku dan bikin banyak
+                kenangan yang ga bakal aku lupain.
+            </p>
+        </div>
+
+    </section>
+
+    <!-- Pesan -->
+    <section class="letter" id="letter">
+
+        <h2 class="section-title">Pesan Untuk Kamu</h2>
+
+        <div class="letter-paper">
+            <p>
+                Makasih udah hadir di hidup aku.
+                Semoga kita bisa terus bikin kenangan baru bersama.
+            </p>
+
+            <p class="letter-sign">
+                — dari baim
+            </p>
+        </div>
+
+    </section>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+
