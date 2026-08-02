@@ -24,12 +24,13 @@
 
     <!-- Navigasi -->
     <nav>
-        <h2>Our Story</h2>
+        <h2>Our Journey</h2>
 
         <ul>
             <li><a href="#timeline">Timeline</a></li>
             <li><a href="#gallery">Galeri</a></li>
             <li><a href="#memory-box">Kotak Kenangan</a></li>
+            <li><a href="#quiz">Quiz</a></li>
             <li><a href="#letter">Pesan</a></li>
         </ul>
     </nav>
@@ -45,16 +46,29 @@
         <div class="bubble bubble2"></div>
         <div class="bubble bubble3"></div>
 
+        <!-- Dekorasi langit (siang & malam) -->
+        <div class="sun"></div>
+        <div class="moon"></div>
+        <div class="stars" id="stars"></div>
+
+        <div class="cloud cloud-satu"></div>
+        <div class="cloud cloud-dua"></div>
+        <div class="cloud cloud-tiga"></div>
+
+        <p class="night-message">
+            Sekarang sudah malam, jangan lupa istirahat ya.
+        </p>
+
         <h1>Untuk Kamu</h1>
 
         <p class="hero-sub">
-            Website ini aku bikin khusus buat orang yang paling spesial.
+            Selamat datang di perjalanan kecil kita. tentu sajaa nanti lama lamaa jadi perjalanan besar HEHE
         </p>
 
         <img src="images/timeline/foto1.jpg" class="hero-photo" alt="Foto kita">
 
         <p class="hero-quote">
-            "Makasih udah hadir dan bikin hari-hari aku lebih berwarna."
+            "Makasih udah hadir dan bikin hari-hari aku lebih berwarna. asik"
         </p>
 
         <button class="btn-primary" onclick="scrollToTimeline()">
@@ -67,6 +81,8 @@
     <section class="timeline" id="timeline">
 
         <h2 class="section-title">Perjalanan Kita</h2>
+
+        <p class="timeline-note">belumm aku masukin semuaa</p>
 
         <div class="card hidden">
             <img src="images/timeline/foto.jpg" alt="Foto bareng pertama">
@@ -101,6 +117,45 @@
             </div>
         </div>
 
+        <!-- Timeline Masa Depan -->
+        <div class="future-timeline">
+            <h3 class="future-title">Timeline Masa Depan</h3>
+
+            <div class="future-item">
+                <div class="future-loader">
+                    <div class="future-bar"></div>
+                </div>
+                <div class="future-row">
+                    <span class="future-label">Coming Soon</span>
+                    <span class="future-date">?</span>
+                </div>
+            </div>
+
+            <div class="future-item">
+                <div class="future-loader">
+                    <div class="future-bar"></div>
+                </div>
+                <div class="future-row">
+                    <span class="future-label">Coming Soon</span>
+                    <span class="future-date">?</span>
+                </div>
+            </div>
+
+            <div class="future-item">
+                <div class="future-loader">
+                    <div class="future-bar"></div>
+                </div>
+                <div class="future-row">
+                    <span class="future-label">Coming Soon</span>
+                    <span class="future-date">?</span>
+                </div>
+            </div>
+
+            <p class="future-note">
+                Nanti aku isiii dengan momen momen penting kitaaa sayanggg
+            </p>
+        </div>
+
     </section>
 
     <!-- Galeri -->
@@ -111,28 +166,72 @@
         <div class="photos">
 
             <figure class="photo-item">
-                <img src="images/timeline/foto1.jpg" onclick="lihatFoto(this)" alt="Kenangan 1">
-                <figcaption>Momen pertama kita</figcaption>
+                <img src="images/memory/memory1.jpg" onclick="lihatFoto(this)" alt="Kenangan 1">
+                <figcaption>Waa fotbar di rumah kamuu nantangin banget AHAHA
+                    pertamaa ketemu mama kamuu dan ditandain<figcaption>
             </figure>
 
             <figure class="photo-item">
-                <img src="images/timeline/foto2.jpg" onclick="lihatFoto(this)" alt="Kenangan 2">
-                <figcaption>Fotbar pertama kita</figcaption>
+                <img src="images/memory/memory2.jpg" onclick="lihatFoto(this)" alt="Kenangan 2">
+                <figcaption>Perantauan kitaa ke jakbar hehehe
+                    senengg bangett bisaa dukung kamuu lombaa, walaupun belum juaraa
+                    nekstaym insyaallah juaraa<figcaption>
+                </figcaption>
             </figure>
 
             <figure class="photo-item">
-                <img src="images/timeline/foto.jpg" onclick="lihatFoto(this)" alt="Kenangan 3">
-                <figcaption>Bareng lagi, selalu</figcaption>
+                <img src="images/memory/memory3fix.jpg" onclick="lihatFoto(this)" alt="Kenangan 3">
+                <figcaption>setelahh tampil klasmitt lucu sekalii</figcaption>
             </figure>
 
         </div>
 
-        <!-- Kotak video -->
-        <div class="video-box">
-            <video id="videoKita" src="images/video/lucuubetul48.mp4" preload="metadata" poster="images/video/lucuubetul48.mp4"></video>
-            <div class="video-play" onclick="playVideo()">
-                <span>▶</span>
-            </div>
+        <!-- Video kenangan -->
+        <h3 class="video-section-title">Video Kenangan Kita</h3>
+
+        <div class="video-grid">
+
+            <figure class="video-card">
+                <div class="video-box" onclick="playVideo('video1')">
+                    <video id="video1" src="images/video/lucuubetul48.mp4" preload="metadata" poster="images/thumbnail/forehehe.png"></video>
+                    <div class="video-play">
+                        <span>▶</span>
+                    </div>
+                </div>
+                <figcaption>Video 1 lucuu bangett nge vlog</figcaption>
+            </figure>
+
+            <!-- GANTI src="images/video/..." dengan file video kamu -->
+            <figure class="video-card">
+                <div class="video-box" onclick="playVideo('video2')">
+                    <video id="video2" src="images/video/lucubunga.mp4" preload="metadata" poster="images/thumbnail/ultahbaim.jpg"></video>
+                    <div class="video-play">
+                        <span>▶</span>
+                    </div>
+                </div>
+                <figcaption>Video 2 AHAHAHA GEMESSS BANGETT KAMUUU</figcaption>
+            </figure>
+
+            <figure class="video-card">
+                <div class="video-box" onclick="playVideo('video3')">
+                    <video id="video3" src="images/video/lucu.mp4" preload="metadata" poster="images/thumbnail/lucuhehe.jpg"></video>
+                    <div class="video-play">
+                        <span>▶</span>
+                    </div>
+                </div>
+                <figcaption>Video 3 mwehehehe sesii menyender</figcaption>
+            </figure>
+
+            <figure class="video-card">
+                <div class="video-box" onclick="playVideo('video4')">
+                    <video id="video4" src="images/video/tomorohehe.mp4" preload="metadata" poster="images/thumbnail/tomorohe.jpg"></video>
+                    <div class="video-play">
+                        <span>▶</span>
+                    </div>
+                </div>
+                <figcaption>Video 4 tomoroo kemarinn</figcaption>
+            </figure>
+
         </div>
 
         <!-- Tombol galeri lengkap -->
@@ -140,6 +239,12 @@
             <button class="btn-secondary" onclick="toggleGallery()">
                 Lihat Galeri Selengkapnya
             </button>
+
+            <p class="gallery-note">
+                Cerita ini belum selesaiii. Karenaa setiap harii, selalu ada
+                kenangan baruu yang bisa kita tambahkann. sampeee tuwaa nantii
+                aamiin
+            </p>
         </div>
 
         <!-- Galeri lengkap (tambah foto di sini) -->
@@ -148,33 +253,34 @@
             <div class="photos">
 
                 <figure class="photo-item">
-                    <img src="images/timeline/foto1.jpg" onclick="lihatFoto(this)" alt="Foto tambahan 1">
-                    <figcaption>Foto tambahan 1</figcaption>
+                    <img src="images/memory/lengkap/ultahalaaa.jpg" onclick="lihatFoto(this)" alt="Foto tambahan 1">
+                    <figcaption>Ultah kamuuu
+                walaupunn waktu ituu aku telat ngasih hadiahnya hehe emsorii</figcaption>
                 </figure>
 
                 <figure class="photo-item">
-                    <img src="images/timeline/foto2.jpg" onclick="lihatFoto(this)" alt="Foto tambahan 2">
-                    <figcaption>Foto tambahan 2</figcaption>
+                    <img src="images/memory/lengkap/memo1.jpg" onclick="lihatFoto(this)" alt="Foto tambahan 2">
+                    <figcaption>Pa lurah bu lurahh??</figcaption>
                 </figure>
 
                 <figure class="photo-item">
-                    <img src="images/timeline/foto.jpg" onclick="lihatFoto(this)" alt="Foto tambahan 3">
-                    <figcaption>Foto tambahan 3</figcaption>
+                    <img src="images/memory/lengkap/memo2.jpg" onclick="lihatFoto(this)" alt="Foto tambahan 3">
+                    <figcaption>Adaa yang abiss latihan caman nii</figcaption>
                 </figure>
 
                 <figure class="photo-item">
-                    <img src="images/timeline/foto1.jpg" onclick="lihatFoto(this)" alt="Foto tambahan 4">
-                    <figcaption>Foto tambahan 4</figcaption>
+                    <img src="images/memory/lengkap/memo4.jpg" onclick="lihatFoto(this)" alt="Foto tambahan 4">
+                    <figcaption>Waaa saat geser ke gacoan ituu</figcaption>
                 </figure>
 
                 <figure class="photo-item">
-                    <img src="images/timeline/foto2.jpg" onclick="lihatFoto(this)" alt="Foto tambahan 5">
-                    <figcaption>Foto tambahan 5</figcaption>
+                    <img src="images/memory/lengkap/memo5.jpg" onclick="lihatFoto(this)" alt="Foto tambahan 5">
+                    <figcaption>Pelepasan baim kee medan perang</figcaption>
                 </figure>
 
                 <figure class="photo-item">
-                    <img src="images/timeline/foto.jpg" onclick="lihatFoto(this)" alt="Foto tambahan 6">
-                    <figcaption>Foto tambahan 6</figcaption>
+                    <img src="images/memory/lengkap/memo6.jpg" onclick="lihatFoto(this)" alt="Foto tambahan 6">
+                    <figcaption>Abisss demosss</figcaption>
                 </figure>
 
             </div>
@@ -209,9 +315,9 @@
         </div>
 
         <div id="foto" class="memory-content">
-            <img src="images/timeline/foto2.jpg" class="memory-photo" alt="Foto favorit">
+            <img src="images/timeline/foto1.jpg" class="memory-photo" alt="Foto favorit">
             <p>
-                Foto ini selalu bikin aku inget momen waktu kita ...
+                Foto favorit masih inii sii. karenaa momennyaa lucu betul awal awal hehehe
             </p>
         </div>
 
@@ -221,7 +327,7 @@
             </div>
 
             <div class="bubble right">
-                Lagi mikirin kamu wkwk
+                Comingsoon next update HEHE
             </div>
         </div>
 
@@ -276,16 +382,28 @@
 
     </section>
 
+    <!-- Quiz Kecil-Kecilan -->
+    <section class="quiz" id="quiz">
+
+        <h2 class="section-title">Quiz Kecil-Kecilan 🧠</h2>
+
+        <p class="quiz-sub">
+            Jawab semua yaaa hayoo cobaaa
+        </p>
+
+        <div id="quiz-container"></div>
+
+    </section>
+
     <!-- Pesan -->
     <section class="letter" id="letter">
 
         <h2 class="section-title">Pesan Untuk Kamu</h2>
 
         <div class="letter-paper">
-            <p>
-                Makasih udah hadir di hidup aku.
+            <p> 
                 Semoga kita bisa terus bikin kenangan baru bersama.
-            </p>
+            </p>    
 
             <p class="letter-sign">
                 — dari baim
