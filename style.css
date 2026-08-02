@@ -375,6 +375,238 @@ body.theme-night nav a:hover {
     background: rgba(90, 140, 220, 0.3);
 }
 
+/* ============ TEMA MALAM - SEMUA SECTION ============ */
+body.theme-night {
+    background: #0d1b33;
+    color: #c7d8f0;
+}
+
+body.theme-night h1,
+body.theme-night h2,
+body.theme-night h3 {
+    color: #e8f2ff;
+}
+
+/* Background section */
+body.theme-night .timeline {
+    background: #0f2138;
+}
+
+body.theme-night .gallery {
+    background: linear-gradient(180deg, #0f2138, #0d1b33);
+}
+
+body.theme-night .memory-box {
+    background: #0f2138;
+}
+
+body.theme-night .quiz {
+    background: #0f2138;
+}
+
+body.theme-night .harapan {
+    background: linear-gradient(180deg, #0f2138, #0d1b33);
+}
+
+body.theme-night .letter {
+    background: linear-gradient(180deg, #0d1b33, #0f2138);
+}
+
+/* Transisi halus saat ganti tema */
+body.theme-night .timeline,
+body.theme-night .gallery,
+body.theme-night .memory-box,
+body.theme-night .quiz,
+body.theme-night .harapan,
+body.theme-night .letter {
+    transition: background 1s ease;
+}
+
+/* Kartu / kontainer */
+body.theme-night .card,
+body.theme-night .future-timeline,
+body.theme-night .photo-item,
+body.theme-night .video-card,
+body.theme-night .memory-content,
+body.theme-night .quiz-card,
+body.theme-night .harapan-form,
+body.theme-night .letter-paper,
+body.theme-night .gallery-note {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(125, 216, 255, 0.22);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+}
+
+body.theme-night .future-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(125, 216, 255, 0.18);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+}
+
+body.theme-night .future-label,
+body.theme-night .date {
+    background: rgba(125, 216, 255, 0.15);
+    color: #aee8ff;
+}
+
+body.theme-night .future-loader,
+body.theme-night .quiz-progress-track {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Teks */
+body.theme-night .content p,
+body.theme-night .timeline-note,
+body.theme-night .future-note,
+body.theme-night .quiz-sub,
+body.theme-night .harapan-sub,
+body.theme-night .wishlist-sub,
+body.theme-night .gallery-note,
+body.theme-night .memory-content p,
+body.theme-night .harapan-card-body p,
+body.theme-night .music-info p {
+    color: #b8cbe4;
+}
+
+body.theme-night .content h3,
+body.theme-night .music-info h3,
+body.theme-night .quiz-card h3,
+body.theme-night .future-title,
+body.theme-night .wishlist-title,
+body.theme-night .harapan-list-title,
+body.theme-night .harapan-card-body h4 {
+    color: #e8f2ff;
+}
+
+body.theme-night .section-title,
+body.theme-night .video-section-title {
+    color: #e8f2ff;
+}
+
+body.theme-night .section-title::after,
+body.theme-night .video-section-title::after,
+body.theme-night .future-title::after {
+    background: linear-gradient(90deg, var(--biru-muda), #4ab8f0);
+}
+
+body.theme-night .photo-item figcaption,
+body.theme-night .video-card figcaption {
+    color: #c7d8f0;
+}
+
+body.theme-night .harapan-footer {
+    color: #aee8ff;
+}
+
+body.theme-night .harapan-kosong {
+    color: #b8cbe4;
+}
+
+/* Quiz */
+body.theme-night .quiz-option {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(125, 216, 255, 0.3);
+    color: #dce9ff;
+}
+
+body.theme-night .quiz-option:hover {
+    background: rgba(125, 216, 255, 0.15);
+    border-color: var(--biru-muda);
+}
+
+body.theme-night .quiz-counter {
+    background: rgba(125, 216, 255, 0.15);
+    color: #aee8ff;
+}
+
+body.theme-night .quiz-note {
+    color: #aee8ff;
+}
+
+body.theme-night .quiz-result {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Form */
+body.theme-night .harapan-form label,
+body.theme-night .status-label {
+    color: #aee8ff;
+}
+
+body.theme-night .harapan-form input,
+body.theme-night .harapan-form textarea,
+body.theme-night .status-select {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(125, 216, 255, 0.3);
+    color: #dce9ff;
+}
+
+body.theme-night .harapan-form input::placeholder,
+body.theme-night .harapan-form textarea::placeholder {
+    color: #6f8bad;
+}
+
+body.theme-night .harapan-form input:focus,
+body.theme-night .harapan-form textarea:focus,
+body.theme-night .status-select:focus {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: var(--biru-muda);
+    box-shadow: 0 0 0 4px rgba(125, 216, 255, 0.15);
+}
+
+body.theme-night .harapan-status {
+    color: #aee8ff;
+}
+
+/* Statistik & wishlist */
+body.theme-night .stat-card,
+body.theme-night #harapan-list .harapan-card {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(125, 216, 255, 0.25);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+body.theme-night .stat-nomor {
+    color: #aee8ff;
+}
+
+body.theme-night .stat-label,
+body.theme-night .harapan-waktu {
+    color: #9db8cc;
+}
+
+body.theme-night .harapan-card-icon {
+    background: rgba(125, 216, 255, 0.15);
+}
+
+/* Bubble chat */
+body.theme-night .left {
+    background: rgba(255, 255, 255, 0.1);
+    color: #dce9ff;
+    border-color: rgba(125, 216, 255, 0.3);
+}
+
+/* Music player */
+body.theme-night .progress-container {
+    color: #aee8ff;
+}
+
+/* Tombol sekunder */
+body.theme-night .btn-secondary {
+    border-color: var(--biru-muda);
+    color: #aee8ff;
+}
+
+body.theme-night .btn-secondary:hover {
+    background: var(--biru-muda);
+    color: white;
+}
+
+/* Kartu video / foto tetap gelap supaya video & foto menonjol */
+body.theme-night .video-box {
+    background: #000;
+}
+
 .hero h1 {
     font-size: 52px;
     margin-bottom: 12px;

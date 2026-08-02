@@ -26,3 +26,11 @@
 - [x] Animasi slide saat ganti soal
 - [x] Hasil + tombol "Ulangi Quiz" ditampilkan setelah menjawab semua soal
 
+## Tema Siang & Malam di SEMUA Section (Feedback User)
+- [x] Perluas tema malam ke seluruh section: Timeline, Galeri (foto + video), Kotak Kenangan, Quiz, Harapan/Wishlist, dan Pesan
+- [x] Background section berubah ke navy gelap (#0f2138 / #0d1b33) saat malam
+- [x] Kartu, form, quiz, wishlist memakai glassmorphism gelap saat malam
+- [x] Semua teks, judul, caption, placeholder disesuaikan agar tetap terbaca di mode malam
+- [x] Transisi halus saat berganti tema
+
+
