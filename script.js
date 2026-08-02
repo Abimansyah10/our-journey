@@ -262,11 +262,11 @@ function showQuizResult() {
     if (quizScore === quizData.length) {
         pesan = "WOWWW BETULL SEMUAAA ii kerenn sayanggg akuu. LOVE YOUUU 💙";
     } else if (quizScore === quizData.length - 1) {
-        pesan = "Yahhh belum bener semuaa tapi gapapaa soalnya itu juga seinget akuu doangg hehe";
+        pesan = "Yahhh belum bener semuaa tapi gapapaa soalnya itu juga seinget akuu doangg hehe. tapii tetepp sayanggg akuu yang selalu benar";
     } else if (quizScore >= quizData.length - 2) {
-        pesan = "Yahh salah duwaa, berarti harus menambah momen baru nii";
+        pesan = "Yahh salah duwaa, berarti harus menambah momen baru nii. tapii tetepp sayanggg akuu yang selalu benar";
     } else {
-        pesan = "Yaaa gapapaa laa nantii kita buat kenangan baru ajaa yang banyakk biar inget wleee";
+        pesan = "Yaaa gapapaa laa nantii kita buat kenangan baru ajaa yang banyakk biar inget wleee. tapii tetepp sayanggg akuu yang selalu benar";
     }
 
     result.textContent = `Skor kamu: ${quizScore}/${quizData.length}. ${pesan}`;
