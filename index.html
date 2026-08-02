@@ -31,6 +31,7 @@
             <li><a href="#gallery">Galeri</a></li>
             <li><a href="#memory-box">Kotak Kenangan</a></li>
             <li><a href="#quiz">Quiz</a></li>
+            <li><a href="#harapan">Harapan</a></li>
             <li><a href="#letter">Pesan</a></li>
         </ul>
     </nav>
@@ -395,6 +396,60 @@
 
     </section>
 
+    <!-- Harapan & Rencana Kita -->
+    <section class="harapan" id="harapan">
+
+        <h2 class="section-title">Harapan & Rencana Kitaa</h2>
+
+        <p class="harapan-sub">
+            Tulis harapan, impian, ataw hal yang mawuu kita lakuinn bersama di masa depann.
+        </p>
+
+        <form id="harapan-form" class="harapan-form" autocomplete="off">
+            <label for="harapan-nama">Nama Pengirim</label>
+            <input
+                type="text"
+                id="harapan-nama"
+                placeholder="Misal: aura cantik, baim ganteng, dll."
+                maxlength="50"
+                required>
+
+            <label for="harapan-isi">Harapan / Rencana</label>
+            <textarea
+                id="harapan-isi"
+                rows="4"
+                placeholder="Contoh: apaa yaaa isii sajaa kaloo adaa. kaloo adaa pesan buat akuu ataw isii buat iseng iseng jugaa bolee"
+                maxlength="500"
+                required></textarea>
+
+            <button type="submit" class="btn-harapan">
+                Simpan Kenangan
+            </button>
+
+            <p id="harapan-status" class="harapan-status"></p>
+        </form>
+
+        <h3 class="wishlist-title">Wishlist Masa Depan Kita</h3>
+
+        <p class="wishlist-sub">
+            "Semwaaa impian kecill inii akan jadi bagian dari perjalanan kitaa."
+        </p>
+
+        <button id="toggle-harapan-btn" class="btn-toggle-harapan">
+            Lihat Semua Harapan
+        </button>
+
+        <section id="wishlist-section" class="wishlist-section">
+            <div id="harapan-stats" class="harapan-stats"></div>
+            <div id="harapan-list" class="harapan-list"></div>
+        </section>
+
+        <p class="harapan-footer">
+            "Semuaa harapan inii akan terus bertambah seiring perjalanan kitaa sayanggg."
+        </p>
+
+    </section>
+
     <!-- Pesan -->
     <section class="letter" id="letter">
 
@@ -413,6 +468,8 @@
     </section>
 
     <script src="script.js"></script>
+
+    <script type="module" src="firebase.js"></script>
 
 </body>
 
