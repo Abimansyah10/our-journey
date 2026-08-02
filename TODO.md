@@ -19,3 +19,10 @@
 - [x] Glassmorphism, sudut melengkung, bayangan lembut, responsif
 - [x] Update firebase.js (urutkan data terbaru, tanpa React/Bootstrap)
 
+## Meningkatkan Quiz (Feedback User)
+- [x] Ubah quiz jadi SATU kotak soal per halaman (hemat ruang di mobile)
+- [x] Tambah tombol "Lanjut →" untuk pindah soal, dan "Lihat Hasil 🏁" di soal terakhir
+- [x] Tambah progress bar & penanda "Soal X dari Y"
+- [x] Animasi slide saat ganti soal
+- [x] Hasil + tombol "Ulangi Quiz" ditampilkan setelah menjawab semua soal
+

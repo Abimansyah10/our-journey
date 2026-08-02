@@ -174,54 +174,102 @@ const quizData = [
     }
 ];
 
+let quizIndex = 0;
 let quizScore = 0;
-let quizAnswered = 0;
 
 function buildQuiz() {
     const container = document.getElementById("quiz-container");
     container.innerHTML = "";
 
-    quizData.forEach((item, index) => {
-        const card = document.createElement("div");
-        card.className = "quiz-card";
-        card.setAttribute("data-index", index);
+    // Satu kotak utama (1 soal per halaman — hemat ruang di HP)
+    const card = document.createElement("div");
+    card.className = "quiz-card";
 
-        const questionEl = document.createElement("h3");
-        questionEl.innerHTML = `${index + 1}. ${item.question}`;
+    // Baris progress
+    const progressTrack = document.createElement("div");
+    progressTrack.className = "quiz-progress-track";
+    const progressFill = document.createElement("div");
+    progressFill.className = "quiz-progress-fill";
+    progressTrack.appendChild(progressFill);
 
-        const optionsWrap = document.createElement("div");
-        optionsWrap.className = "quiz-options";
+    const counterEl = document.createElement("div");
+    counterEl.className = "quiz-counter";
 
-        item.options.forEach((opt, optIndex) => {
-            const btn = document.createElement("button");
-            btn.className = "quiz-option";
-            btn.textContent = opt;
-            btn.addEventListener("click", function () {
-                answerQuiz(index, optIndex, this);
-            });
-            optionsWrap.appendChild(btn);
-        });
+    const questionEl = document.createElement("h3");
 
-        const noteEl = document.createElement("p");
-        noteEl.className = "quiz-note";
+    const optionsWrap = document.createElement("div");
+    optionsWrap.className = "quiz-options";
 
-        card.appendChild(questionEl);
-        card.appendChild(optionsWrap);
-        card.appendChild(noteEl);
-        container.appendChild(card);
-    });
+    const noteEl = document.createElement("p");
+    noteEl.className = "quiz-note";
 
+    // Tombol lanjut
+    const navWrap = document.createElement("div");
+    navWrap.className = "quiz-nav";
+    const nextBtn = document.createElement("button");
+    nextBtn.className = "quiz-next";
+    nextBtn.disabled = true;
+    nextBtn.addEventListener("click", soalBerikutnya);
+    navWrap.appendChild(nextBtn);
+
+    card.appendChild(progressTrack);
+    card.appendChild(counterEl);
+    card.appendChild(questionEl);
+    card.appendChild(optionsWrap);
+    card.appendChild(noteEl);
+    card.appendChild(navWrap);
+    container.appendChild(card);
+
+    // Hasil (disembunyikan sampai quiz selesai)
     const resetWrap = document.createElement("div");
     resetWrap.className = "quiz-result-wrap";
+    resetWrap.style.display = "none";
     resetWrap.innerHTML =
         '<div class="quiz-result"></div>' +
         '<button class="btn-secondary quiz-reset" onclick="resetQuiz()">Ulangi Quiz 🔄</button>';
     container.appendChild(resetWrap);
+
+    tampilSoal();
 }
 
-function answerQuiz(questionIndex, optionIndex, btn) {
-    const card = document.querySelectorAll(".quiz-card")[questionIndex];
-    const item = quizData[questionIndex];
+function tampilSoal() {
+    const card = document.querySelector(".quiz-card");
+    const item = quizData[quizIndex];
+
+    card.classList.remove("answered", "ganti");
+    // paksa reflow supaya animasi slide berjalan tiap pindah soal
+    void card.offsetWidth;
+    card.classList.add("ganti");
+
+    card.querySelector(".quiz-progress-fill").style.width =
+        (quizIndex / quizData.length) * 100 + "%";
+    card.querySelector(".quiz-counter").textContent =
+        "Soal " + (quizIndex + 1) + " dari " + quizData.length;
+    card.querySelector("h3").innerHTML =
+        (quizIndex + 1) + ". " + item.question;
+    card.querySelector(".quiz-note").textContent = "";
+
+    const nextBtn = card.querySelector(".quiz-next");
+    nextBtn.disabled = true;
+    nextBtn.textContent =
+        quizIndex === quizData.length - 1 ? "Lihat Hasil 🏁" : "Lanjut →";
+
+    const optionsWrap = card.querySelector(".quiz-options");
+    optionsWrap.innerHTML = "";
+    item.options.forEach(function (opt, optIndex) {
+        const btn = document.createElement("button");
+        btn.className = "quiz-option";
+        btn.textContent = opt;
+        btn.addEventListener("click", function () {
+            jawabSoal(optIndex, btn);
+        });
+        optionsWrap.appendChild(btn);
+    });
+}
+
+function jawabSoal(optionIndex, btn) {
+    const card = document.querySelector(".quiz-card");
+    const item = quizData[quizIndex];
     const allBtns = card.querySelectorAll(".quiz-option");
 
     if (card.classList.contains("answered")) return;
@@ -247,16 +295,32 @@ function answerQuiz(questionIndex, optionIndex, btn) {
     }
 
     card.querySelector(".quiz-note").textContent = item.note;
+    card.querySelector(".quiz-progress-fill").style.width =
+        ((quizIndex + 1) / quizData.length) * 100 + "%";
 
-    quizAnswered++;
+    card.querySelector(".quiz-next").disabled = false;
+}
 
-    if (quizAnswered === quizData.length) {
+function soalBerikutnya() {
+    if (quizIndex === quizData.length - 1) {
         showQuizResult();
+        return;
     }
+    quizIndex++;
+    tampilSoal();
+    document.getElementById("quiz").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
 }
 
 function showQuizResult() {
-    const result = document.querySelector(".quiz-result");
+    document.querySelector(".quiz-card").style.display = "none";
+
+    const resetWrap = document.querySelector(".quiz-result-wrap");
+    resetWrap.style.display = "block";
+
+    const result = resetWrap.querySelector(".quiz-result");
 
     let pesan;
     if (quizScore === quizData.length) {
@@ -270,12 +334,20 @@ function showQuizResult() {
     }
 
     result.textContent = `Skor kamu: ${quizScore}/${quizData.length}. ${pesan}`;
+
+    setTimeout(function () {
+        resetWrap.scrollIntoView({ behavior: "smooth", block: "center" });
+    }, 100);
 }
 
 function resetQuiz() {
+    quizIndex = 0;
     quizScore = 0;
-    quizAnswered = 0;
     buildQuiz();
+    document.getElementById("quiz").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
 }
 
 buildQuiz();

@@ -1241,6 +1241,76 @@ body.theme-night nav a:hover {
     min-height: 18px;
 }
 
+/* Header soal: progress + penanda soal */
+.quiz-progress-track {
+    height: 8px;
+    background: var(--biru-paling-muda);
+    border-radius: 30px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.quiz-progress-fill {
+    height: 100%;
+    width: 0%;
+    border-radius: 30px;
+    background: linear-gradient(90deg, var(--biru-muda), #4ab8f0);
+    transition: width 0.5s ease;
+}
+
+.quiz-counter {
+    display: inline-block;
+    background: var(--biru-paling-muda);
+    color: var(--biru-gelap);
+    font-size: 12.5px;
+    font-weight: 700;
+    padding: 5px 14px;
+    border-radius: 30px;
+    margin-bottom: 14px;
+    letter-spacing: 0.3px;
+}
+
+/* Animasi ganti soal */
+.quiz-card.ganti {
+    animation: fadeSlideIn 0.35s ease both;
+}
+
+@keyframes fadeSlideIn {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Tombol lanjut */
+.quiz-nav {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 18px;
+}
+
+.quiz-next {
+    padding: 12px 26px;
+    border: none;
+    border-radius: 40px;
+    background: linear-gradient(135deg, var(--biru-muda), #4ab8f0);
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 14.5px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 8px 22px rgba(74, 184, 240, 0.4);
+    transition: 0.3s ease;
+}
+
+.quiz-next:hover:not(:disabled) {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(74, 184, 240, 0.55);
+}
+
+.quiz-next:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
 .quiz-result-wrap {
     max-width: 640px;
     margin: 25px auto 0;
