@@ -32,6 +32,7 @@
             <li><a href="#memory-box">Kotak Kenangan</a></li>
             <li><a href="#quiz">Quiz</a></li>
             <li><a href="#harapan">Harapan</a></li>
+            <li><a href="#tabungan">🏦 Tabungan Kita</a></li>
             <li><a href="#letter">Pesan</a></li>
         </ul>
     </nav>
@@ -447,6 +448,73 @@
         <p class="harapan-footer">
             "Semuaa harapan inii akan terus bertambah seiring perjalanan kitaa sayanggg."
         </p>
+
+    </section>
+
+    <!-- ================================================================
+         TABUNGAN KITA
+         ================================================================ -->
+    <section class="tabungan" id="tabungan">
+
+        <h2 class="section-title">Tabungan Kita</h2>
+
+        <p class="tabungan-sub">
+            Menabungg bersamaa untuk entahh apa yang akan kita lakuinn di masa depann
+        </p>
+
+        <!-- ---------- FORM TAMBAH TABUNGAN ---------- -->
+        <form id="tabungan-form" class="tabungan-form" autocomplete="off">
+
+            <!-- Dropdown nama -->
+            <label for="tabungan-nama">Nama</label>
+            <select id="tabungan-nama" class="tabungan-select" required>
+                <option value="Baim">Baimm ganteng</option>
+                <option value="Dia">Alaaa Cantikk</option>
+            </select>
+
+            <!-- Input nominal -->
+            <label for="tabungan-nominal">Nominal (Rp)</label>
+            <input
+                type="number"
+                id="tabungan-nominal"
+                class="tabungan-input"
+                min="0"
+                placeholder="Contoh: 100 juta aamin"
+                required>
+
+            <!-- Input catatan (opsional) -->
+            <label for="tabungan-catatan">Catatan (opsional)</label>
+            <input
+                type="text"
+                id="tabungan-catatan"
+                class="tabungan-input"
+                maxlength="200"
+                placeholder="Contoh: Bonus lomba">
+
+            <!-- Tombol simpan -->
+            <button type="submit" class="btn-tabungan">
+                ➕ Simpan Tabungan
+            </button>
+
+            <!-- Status pesan setelah menyimpan -->
+            <p id="tabungan-status" class="tabungan-status"></p>
+        </form>
+
+        <!-- ---------- STATISTIK ---------- -->
+        <div id="tabungan-stats" class="tabungan-stats"></div>
+
+        <!-- ---------- RIWAYAT MINGGUAN (ACCORDION) ---------- -->
+        <h3 class="riwayat-title">📅 Riwayat Mingguan</h3>
+
+        <p class="riwayat-sub">
+            Klikk buwat buka riwayat tiap mingguu (Senin–Jumat).
+            Tabungan Sabtu/Minggu masuk kategorii 🎉 Bonus Weekend. hehe ada saja ide nya
+        </p>
+
+        <div id="tabungan-accordion" class="tabungan-accordion"></div>
+
+        <!-- ---------- RINGKASAN MINGGU INI ---------- -->
+        <div id="tabungan-ringkasan" class="tabungan-ringkasan"></div>
 
     </section>
 

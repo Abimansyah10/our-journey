@@ -2001,6 +2001,450 @@ body.theme-night .video-box {
     font-weight: 600;
 }
 
+/* ==========================================================
+   🏦 TABUNGAN KITA
+   ========================================================== */
+.tabungan {
+    background: linear-gradient(180deg, var(--biru-soft), var(--putih));
+    text-align: center;
+}
+
+.tabungan-sub {
+    max-width: 540px;
+    margin: -20px auto 30px;
+    color: var(--abu-teks);
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* ---------- Form tambah tabungan ---------- */
+.tabungan-form {
+    max-width: 560px;
+    margin: 0 auto 40px;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(125, 216, 255, 0.5);
+    border-radius: 22px;
+    padding: 25px 25px 20px;
+    box-shadow: 0 12px 35px rgba(62, 154, 209, 0.12);
+    text-align: left;
+}
+
+.tabungan-form label {
+    display: block;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--biru-gelap);
+    margin: 14px 0 6px;
+}
+
+.tabungan-form label:first-child {
+    margin-top: 0;
+}
+
+.tabungan-select,
+.tabungan-input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 2px solid var(--biru-terang);
+    border-radius: 14px;
+    background: var(--biru-soft);
+    font-family: 'Quicksand', sans-serif;
+    font-size: 15px;
+    color: var(--biru-teks);
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.tabungan-select:focus,
+.tabungan-input:focus {
+    border-color: var(--biru-muda);
+    background: white;
+    box-shadow: 0 0 0 4px rgba(125, 216, 255, 0.25);
+}
+
+.tabungan-input::placeholder {
+    color: #9db8cc;
+}
+
+.btn-tabungan {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 40px;
+    background: linear-gradient(135deg, var(--biru-muda), #4ab8f0);
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(74, 184, 240, 0.4);
+    transition: 0.3s ease;
+}
+
+.btn-tabungan:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 22px rgba(74, 184, 240, 0.75),
+        0 14px 30px rgba(74, 184, 240, 0.5);
+}
+
+.btn-tabungan:active {
+    transform: scale(0.97);
+}
+
+.tabungan-status {
+    margin-top: 12px;
+    font-size: 13.5px;
+    font-weight: 600;
+    min-height: 18px;
+    text-align: center;
+}
+
+/* ---------- Statistik tabungan ---------- */
+.tabungan-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 14px;
+    max-width: 900px;
+    margin: 0 auto 40px;
+}
+
+.tabungan-stat {
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(125, 216, 255, 0.5);
+    border-radius: 18px;
+    padding: 18px 12px;
+    box-shadow: 0 8px 25px rgba(62, 154, 209, 0.12);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 0.5s ease both;
+}
+
+.tabungan-stat:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 30px var(--bayangan);
+}
+
+.tabungan-stat-emoji {
+    display: block;
+    font-size: 24px;
+    margin-bottom: 6px;
+}
+
+/* Foto/avatar pengganti emoji di statistik & riwayat tabungan */
+.tabungan-avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 4px;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.9), 0 2px 6px rgba(62, 154, 209, 0.35);
+}
+
+body.theme-night .tabungan-avatar {
+    box-shadow: 0 0 0 2px rgba(160, 200, 255, 0.9), 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.tabungan-stat-nomor {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--biru-gelap);
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.2;
+    word-break: break-word;
+}
+
+.tabungan-stat-label {
+    display: block;
+    font-size: 12.5px;
+    color: var(--abu-teks);
+    margin-top: 4px;
+    font-weight: 600;
+}
+
+/* ---------- Judul riwayat ---------- */
+.riwayat-title {
+    color: var(--biru-gelap);
+    font-size: 22px;
+    font-weight: 700;
+    margin: 5px auto 8px;
+}
+
+.riwayat-sub {
+    max-width: 520px;
+    margin: 0 auto 26px;
+    color: var(--abu-teks);
+    font-size: 14px;
+    font-style: italic;
+    line-height: 1.7;
+}
+
+/* ---------- Accordion riwayat mingguan ---------- */
+.tabungan-accordion {
+    max-width: 640px;
+    margin: 0 auto 35px;
+    text-align: left;
+}
+
+.tabungan-item {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(125, 216, 255, 0.5);
+    border-radius: 16px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(62, 154, 209, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.tabungan-item.open {
+    box-shadow: 0 10px 28px var(--bayangan);
+}
+
+.tabungan-head {
+    width: 100%;
+    padding: 14px 18px;
+    border: none;
+    background: transparent;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 14.5px;
+    font-weight: 700;
+    color: var(--biru-gelap);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    text-align: left;
+    transition: background 0.3s ease;
+}
+
+.tabungan-head:hover {
+    background: var(--biru-paling-muda);
+}
+
+.tabungan-arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.tabungan-item.open .tabungan-arrow {
+    transform: rotate(90deg);
+}
+
+/* Bagian khusus 🎉 Bonus Weekend di dalam accordion */
+.tabungan-bonus-title {
+    font-weight: 700;
+    font-size: 14px;
+    color: #b7791f;
+    margin: 14px 0 4px;
+    padding-top: 10px;
+    border-top: 2px dashed rgba(247, 183, 49, 0.5);
+}
+
+.tabungan-head-total {
+    font-size: 13.5px;
+    color: #4ab8f0;
+    white-space: nowrap;
+    font-weight: 700;
+}
+
+/* Badge otomatis di judul minggu */
+.tabungan-badge {
+    font-size: 15px;
+    margin-left: 2px;
+}
+
+/* Body accordion: animasi buka/tutup dengan max-height */
+.tabungan-body {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 18px;
+    transition: max-height 0.45s ease, padding 0.3s ease;
+}
+
+.tabungan-item.open .tabungan-body {
+    max-height: 800px;
+    padding: 6px 18px 18px;
+}
+
+.tabungan-day {
+    border-top: 2px dashed rgba(125, 216, 255, 0.5);
+    padding: 12px 0 6px;
+    margin-top: 4px;
+    animation: fadeSlideIn 0.4s ease both;
+}
+
+.tabungan-day:first-child {
+    border-top: none;
+    margin-top: 0;
+}
+
+.tabungan-day-title {
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--biru-gelap);
+    margin-bottom: 6px;
+}
+
+.tabungan-day-row {
+    font-size: 13.5px;
+    color: var(--abu-teks);
+    line-height: 1.7;
+}
+
+.tabungan-day-total {
+    font-weight: 700;
+    color: var(--biru-gelap);
+}
+
+.tabungan-day-catatan {
+    font-size: 12.5px;
+    color: #9db8cc;
+    font-style: italic;
+    margin-top: 4px;
+}
+
+.tabungan-kosong {
+    text-align: center;
+    color: var(--abu-teks);
+    font-style: italic;
+    padding: 20px 0;
+}
+
+/* Item khusus 🎉 Bonus Weekend */
+.tabungan-item.bonus {
+    border-color: rgba(247, 183, 49, 0.5);
+    background: rgba(255, 244, 214, 0.6);
+}
+
+.tabungan-item.bonus .tabungan-head {
+    color: #b7791f;
+}
+
+/* ---------- Ringkasan minggu ini ---------- */
+.tabungan-ringkasan {
+    max-width: 640px;
+    margin: 0 auto 15px;
+    text-align: center;
+}
+
+.tabungan-ringkasan-card {
+    background: linear-gradient(135deg, var(--biru-muda), #4ab8f0);
+    color: white;
+    border-radius: 22px;
+    padding: 24px 22px;
+    box-shadow: 0 12px 35px rgba(74, 184, 240, 0.4);
+    animation: fadeSlideUp 0.5s ease both;
+}
+
+.tabungan-ringkasan-card h4 {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 14px;
+    color: white;
+}
+
+.tabungan-ringkasan-row {
+    font-size: 15px;
+    line-height: 1.9;
+    font-weight: 600;
+}
+
+/* ---------- Tema malam untuk Tabungan ---------- */
+body.theme-night .tabungan {
+    background: #0f2138;
+}
+
+body.theme-night .tabungan-form,
+body.theme-night .tabungan-item {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(125, 216, 255, 0.22);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+}
+
+body.theme-night .tabungan-item.bonus {
+    background: rgba(60, 45, 10, 0.35);
+    border-color: rgba(247, 183, 49, 0.4);
+}
+
+body.theme-night .tabungan-item.bonus .tabungan-head {
+    color: #f6c96a;
+}
+
+body.theme-night .tabungan-sub,
+body.theme-night .riwayat-sub,
+body.theme-night .tabungan-kosong,
+body.theme-night .tabungan-day-row {
+    color: #b8cbe4;
+}
+
+body.theme-night .tabungan-form label,
+body.theme-night .tabungan-day-title,
+body.theme-night .tabungan-head {
+    color: #e8f2ff;
+}
+
+body.theme-night .tabungan-head:hover {
+    background: rgba(125, 216, 255, 0.15);
+}
+
+body.theme-night .tabungan-select,
+body.theme-night .tabungan-input {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(125, 216, 255, 0.3);
+    color: #dce9ff;
+}
+
+body.theme-night .tabungan-input::placeholder {
+    color: #6f8bad;
+}
+
+body.theme-night .tabungan-select:focus,
+body.theme-night .tabungan-input:focus {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: var(--biru-muda);
+    box-shadow: 0 0 0 4px rgba(125, 216, 255, 0.15);
+}
+
+body.theme-night .tabungan-stat {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(125, 216, 255, 0.25);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+body.theme-night .tabungan-stat-nomor,
+body.theme-night .tabungan-head-total,
+body.theme-night .tabungan-day-total {
+    color: #aee8ff;
+}
+
+body.theme-night .tabungan-stat-label,
+body.theme-night .tabungan-day-catatan {
+    color: #9db8cc;
+}
+
+body.theme-night .tabungan-day {
+    border-top-color: rgba(125, 216, 255, 0.2);
+}
+
+body.theme-night .tabungan-ringkasan-card {
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+}
+
+body.theme-night .riwayat-title {
+    color: #e8f2ff;
+}
+
 /* ============ SCROLL REVEAL ============ */
 .hidden {
     opacity: 0;
